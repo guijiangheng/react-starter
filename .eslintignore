@@ -3,4 +3,5 @@ node_modules/
 build/
 dist/
 
+vite.config.ts
 tailwind.config.js
