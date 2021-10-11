@@ -10,7 +10,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "src/**/*.{css}": "stylelint --cache --fix"
+    "src/**/*.css": "stylelint --cache --fix"
   },
   "dependencies": {
     "react": "^17.0.0",
