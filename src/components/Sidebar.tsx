@@ -1,5 +1,6 @@
 import clsx from 'clsx';
-import { FC } from 'react';
+import PropTypes from 'prop-types';
+import { memo } from 'react';
 
 import { BackDrop } from './BackDrop';
 
@@ -8,7 +9,7 @@ interface Props {
   setVisible: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const Sidebar: FC<Props> = ({ visible, setVisible }) => (
+export const Sidebar: React.FC<Props> = memo(({ visible, setVisible }) => (
   <>
     <BackDrop visible={visible} className="lg:hidden" />
     <div
@@ -32,4 +33,9 @@ export const Sidebar: FC<Props> = ({ visible, setVisible }) => (
       </button>
     </div>
   </>
-);
+));
+
+Sidebar.propTypes = {
+  visible: PropTypes.bool.isRequired,
+  setVisible: PropTypes.func.isRequired,
+};

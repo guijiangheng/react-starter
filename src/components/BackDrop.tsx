@@ -1,13 +1,13 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { FC, memo } from 'react';
+import { memo } from 'react';
 
 interface Props {
   visible: boolean;
   className?: string;
 }
 
-export const BackDrop: FC<Props> = memo(({ visible, className }) => (
+export const BackDrop: React.FC<Props> = memo(({ visible, className }) => (
   <div
     className={clsx(
       'fixed inset-0 bg-gray-900 bg-opacity-30 transition-opacity duration-200',
