@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'jit',
   purge: [],
   darkMode: false,
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
