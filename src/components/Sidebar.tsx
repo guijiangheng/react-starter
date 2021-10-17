@@ -58,10 +58,10 @@ export const Sidebar: React.FC<SidebarProps> = memo(
 
     return (
       <>
-        <BackDrop visible={visible} className="lg:hidden" />
+        <BackDrop visible={visible} className="z-40 lg:hidden" />
         <div
           className={clsx(
-            'absolute left-0 top-0 p-4 w-64 h-screen bg-gray-800 transition-transform duration-200 ease-in-out',
+            'absolute z-40 left-0 top-0 p-4 w-64 h-screen bg-gray-800 transition-transform duration-200 ease-in-out',
             visible ? 'translate-x-0' : '-translate-x-64',
           )}
         >
