@@ -103,24 +103,22 @@ export const SearchModal: React.FC<SearchModalProps> = memo(
                   Recent searches
                 </div>
                 <ul className="text-sm">
-                  <li>
-                    {[
-                      'Form Builder - 23 hours on-demand video',
-                      'Access Mosaic on mobile and TV',
-                      'Product Update - Q4 2021',
-                      'Master Digital Marketing Strategy course',
-                      'Dedicated forms for products',
-                      'Product Update - Q4 2021',
-                    ].map((label, index) => (
-                      <ListItem
-                        onClick={() => setOpen(false)}
-                        icon={SearchIcon}
-                        key={index}
-                      >
-                        {label}
-                      </ListItem>
-                    ))}
-                  </li>
+                  {[
+                    'Form Builder - 23 hours on-demand video',
+                    'Access Mosaic on mobile and TV',
+                    'Product Update - Q4 2021',
+                    'Master Digital Marketing Strategy course',
+                    'Dedicated forms for products',
+                    'Product Update - Q4 2021',
+                  ].map((label, index) => (
+                    <ListItem
+                      onClick={() => setOpen(false)}
+                      icon={SearchIcon}
+                      key={index}
+                    >
+                      {label}
+                    </ListItem>
+                  ))}
                 </ul>
               </div>
               {/* Recent pages */}
