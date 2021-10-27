@@ -1,7 +1,9 @@
+import { Menu as HeadlessMenu } from '@headlessui/react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { range } from 'rambda';
-import { forwardRef, memo, useState } from 'react';
+import React, { forwardRef, memo, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import { Menu } from './Menu';
 import { Notification } from './Notification';
@@ -39,6 +41,28 @@ Button.propTypes = {
   children: PropTypes.node,
   onClick: PropTypes.func,
 };
+
+interface HelpLinkProps {
+  to: string;
+}
+
+const HelpLink: React.FC<HelpLinkProps> = ({ to, children }) => (
+  <HeadlessMenu.Item>
+    {({ active }) => (
+      <HeadlessMenu.Button as="li">
+        <Link
+          to={to}
+          className={clsx(
+            'flex items-center px-3 py-1 text-indigo-500 hover:text-indigo-700 text-sm font-medium',
+            active && 'text-indigo-700',
+          )}
+        >
+          {children}
+        </Link>
+      </HeadlessMenu.Button>
+    )}
+  </HeadlessMenu.Item>
+);
 
 export interface HeaderProps {
   setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -85,6 +109,7 @@ export const Header: React.FC<HeaderProps> = memo(({ setSidebarOpen }) => {
             </svg>
           </Button>
 
+          {/* Notification Menu */}
           <Menu
             reference={({ open }) => (
               <Button badge active={open}>
@@ -118,6 +143,58 @@ export const Header: React.FC<HeaderProps> = memo(({ setSidebarOpen }) => {
                   date="Feb 12, 2021"
                 />
               ))}
+            </ul>
+          </Menu>
+
+          {/* Help Menu */}
+          <Menu
+            reference={({ open }) => (
+              <Button active={open}>
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className="text-gray-500 fill-current"
+                    d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 12c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm1-3H7V4h2v5z"
+                  />
+                </svg>
+              </Button>
+            )}
+          >
+            <div className="pb-2 pt-1.5 px-4 text-gray-400 text-xs font-semibold uppercase">
+              Need Help?
+            </div>
+            <ul className="min-w-44">
+              <HelpLink to="#0">
+                <svg
+                  className="flex-shrink-0 mr-2 w-3 h-3 text-indigo-300 fill-current"
+                  viewBox="0 0 12 12"
+                >
+                  <rect y="3" width="12" height="9" rx="1" />
+                  <path d="M2 0h8v2H2z" />
+                </svg>
+                <span>Documentation</span>
+              </HelpLink>
+              <HelpLink to="#0">
+                <svg
+                  className="flex-shrink-0 mr-2 w-3 h-3 text-indigo-300 fill-current"
+                  viewBox="0 0 12 12"
+                >
+                  <path d="M10.5 0h-9A1.5 1.5 0 000 1.5v9A1.5 1.5 0 001.5 12h9a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0010.5 0zM10 7L8.207 5.207l-3 3-1.414-1.414 3-3L5 2h5v5z" />
+                </svg>
+                <span>Support Site</span>
+              </HelpLink>
+              <HelpLink to="#0">
+                <svg
+                  className="flex-shrink-0 mr-2 w-3 h-3 text-indigo-300 fill-current"
+                  viewBox="0 0 12 12"
+                >
+                  <path d="M11.854.146a.5.5 0 00-.525-.116l-11 4a.5.5 0 00-.015.934l4.8 1.921 1.921 4.8A.5.5 0 007.5 12h.008a.5.5 0 00.462-.329l4-11a.5.5 0 00-.116-.525z" />
+                </svg>
+                <span>Contact us</span>
+              </HelpLink>
             </ul>
           </Menu>
         </div>
