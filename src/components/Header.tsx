@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { range } from 'rambda';
 import { forwardRef, memo, useState } from 'react';
 
-import { NotificationItem, NotificationPopper } from './NotificationPopper';
+import { Menu } from './Menu';
+import { Notification } from './Notification';
 import { SearchModal } from './SearchModal';
 
 interface ButtonProps {
@@ -84,7 +85,7 @@ export const Header: React.FC<HeaderProps> = memo(({ setSidebarOpen }) => {
             </svg>
           </Button>
 
-          <NotificationPopper
+          <Menu
             reference={({ open }) => (
               <Button badge active={open}>
                 <svg
@@ -104,16 +105,21 @@ export const Header: React.FC<HeaderProps> = memo(({ setSidebarOpen }) => {
               </Button>
             )}
           >
-            {range(1, 5).map((index) => (
-              <NotificationItem
-                key={index}
-                to="#0"
-                highlight="Edit your information in a swipe"
-                description="Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim."
-                date="Feb 12, 2021"
-              />
-            ))}
-          </NotificationPopper>
+            <div className="pb-2 pt-1.5 px-4 text-gray-400 text-xs font-semibold uppercase">
+              Notifications
+            </div>
+            <ul className="min-w-80">
+              {range(1, 5).map((index) => (
+                <Notification
+                  key={index}
+                  to="#0"
+                  highlight="Edit your information in a swipe"
+                  description="Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim."
+                  date="Feb 12, 2021"
+                />
+              ))}
+            </ul>
+          </Menu>
         </div>
       </header>
 
