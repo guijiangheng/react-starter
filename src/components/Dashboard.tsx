@@ -1,4 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import UserImage1 from '@/assets/user-36-01.jpg';
+import UserImage2 from '@/assets/user-36-02.jpg';
+import UserImage3 from '@/assets/user-36-03.jpg';
+import UserImage4 from '@/assets/user-36-04.jpg';
 
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
@@ -13,7 +19,7 @@ export function Dashboard() {
         <Header setSidebarOpen={setSidebarOpen} />
         <main className="px-4 py-8">
           {/* Welcome Banner */}
-          <div className="relative p-4 bg-indigo-200 rounded-sm overflow-hidden sm:p-6">
+          <div className="relative mb-8 p-4 bg-indigo-200 rounded-sm overflow-hidden sm:p-6">
             <div className="absolute right-0 top-0 hidden -mt-4 mr-16 pointer-events-none xl:block">
               <svg
                 width="319"
@@ -87,6 +93,48 @@ export function Dashboard() {
                 Good afternoon, Acme Inc. 👋
               </h1>
               <p>Here is what’s happening with your projects today:</p>
+            </div>
+          </div>
+
+          {/* Dashboard actions */}
+          <div className="flex items-center justify-between mb-8">
+            <div className="flex -space-x-3">
+              {[UserImage1, UserImage2, UserImage3, UserImage4].map(
+                (image, index) => (
+                  <Link key={index} className="inline-flex" to="#0">
+                    <img
+                      className="rounded-full"
+                      src={image}
+                      alt="user-avatar"
+                      width="36"
+                      height="36"
+                    />
+                  </Link>
+                ),
+              )}
+              <button
+                type="button"
+                className="flex items-center justify-center ml-2 w-9 h-9 text-indigo-500 bg-white border border-gray-200 hover:border-gray-300 rounded-full shadow-sm transition duration-150"
+              >
+                <svg className="w-4 h-4 fill-current" viewBox="0 0 16 16">
+                  <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
+                </svg>
+              </button>
+            </div>
+
+            <div className="flex gap-2">
+              <button
+                type="button"
+                className="btn text-white bg-indigo-500 hover:bg-indigo-600"
+              >
+                <svg
+                  className="flex-shrink-0 w-4 h-4 fill-current opacity-50"
+                  viewBox="0 0 16 16"
+                >
+                  <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
+                </svg>
+                <span className="xs:block hidden ml-2">Add view</span>
+              </button>
             </div>
           </div>
         </main>
