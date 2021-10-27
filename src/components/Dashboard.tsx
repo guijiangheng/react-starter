@@ -6,6 +6,7 @@ import UserImage2 from '@/assets/user-36-02.jpg';
 import UserImage3 from '@/assets/user-36-03.jpg';
 import UserImage4 from '@/assets/user-36-04.jpg';
 
+import { FilterPopover } from './FilterPopover';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
 
@@ -123,9 +124,11 @@ export function Dashboard() {
             </div>
 
             <div className="flex gap-2">
+              <FilterPopover />
+
               <button
                 type="button"
-                className="btn flex gap-2 items-center text-white bg-indigo-500 hover:bg-indigo-600"
+                className="btn text-white bg-indigo-500 hover:bg-indigo-600"
               >
                 <svg
                   className="flex-shrink-0 w-4 h-4 fill-current opacity-50"

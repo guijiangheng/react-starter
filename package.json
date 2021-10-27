@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
+    "@tailwindcss/forms": "^0.3.4",
     "clsx": "^1.1.1",
     "prop-types": "^15.7.2",
     "rambda": "^6.9.0",
