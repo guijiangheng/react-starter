@@ -3,11 +3,12 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 import { range } from 'rambda';
 import React, { forwardRef, memo, useState } from 'react';
-import { Link } from 'react-router-dom';
 
+import { Link } from './Link';
 import { Menu } from './Menu';
 import { Notification } from './Notification';
 import { SearchModal } from './SearchModal';
+import { UserMenu } from './UserMenu';
 
 interface ButtonProps {
   active?: boolean;
@@ -50,13 +51,7 @@ const HelpLink: React.FC<HelpLinkProps> = ({ to, children }) => (
   <HeadlessMenu.Item>
     {({ active }) => (
       <HeadlessMenu.Button as="li">
-        <Link
-          to={to}
-          className={clsx(
-            'flex items-center px-3 py-1 text-indigo-500 hover:text-indigo-700 text-sm font-medium',
-            active && 'text-indigo-700',
-          )}
-        >
+        <Link to={to} active={active} className="px-3 py-1">
           {children}
         </Link>
       </HeadlessMenu.Button>
@@ -197,6 +192,8 @@ export const Header: React.FC<HeaderProps> = memo(({ setSidebarOpen }) => {
               </HelpLink>
             </ul>
           </Menu>
+
+          <UserMenu />
         </div>
       </header>
 
