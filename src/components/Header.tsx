@@ -1,8 +1,9 @@
-import { Menu, Transition } from '@headlessui/react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
+import { range } from 'rambda';
 import { forwardRef, memo, useState } from 'react';
 
+import { NotificationItem, NotificationPopper } from './NotificationPopper';
 import { SearchModal } from './SearchModal';
 
 interface ButtonProps {
@@ -35,7 +36,7 @@ Button.propTypes = {
   active: PropTypes.bool,
   badge: PropTypes.bool,
   children: PropTypes.node,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 export interface HeaderProps {
@@ -83,42 +84,36 @@ export const Header: React.FC<HeaderProps> = memo(({ setSidebarOpen }) => {
             </svg>
           </Button>
 
-          <Menu as="div" className="relative flex">
-            {({ open }) => (
-              <>
-                <Menu.Button as={Button} badge active={open}>
-                  <svg
-                    className="w-4 h-4"
-                    viewBox="0 0 16 16"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      className="text-gray-500 fill-current"
-                      d="M6.5 0C2.91 0 0 2.462 0 5.5c0 1.075.37 2.074 1 2.922V12l2.699-1.542A7.454 7.454 0 006.5 11c3.59 0 6.5-2.462 6.5-5.5S10.09 0 6.5 0z"
-                    />
-                    <path
-                      className="text-gray-400 fill-current"
-                      d="M16 9.5c0-.987-.429-1.897-1.147-2.639C14.124 10.348 10.66 13 6.5 13c-.103 0-.202-.018-.305-.021C7.231 13.617 8.556 14 10 14c.449 0 .886-.04 1.307-.11L15 16v-4h-.012C15.627 11.285 16 10.425 16 9.5z"
-                    />
-                  </svg>
-                </Menu.Button>
-                <Transition
-                  show={open}
-                  enter="transition transform duration-300 ease-out"
-                  enterFrom="opacity-0 -translate-y-2"
-                  enterTo="opacity-100 translate-y-0"
-                  leave="transition transform duration-200 ease-out"
-                  leaveFrom="opacity-100 translate-y-0"
-                  leaveTo="opacity-0 -translate-y-2"
+          <NotificationPopper
+            reference={({ open }) => (
+              <Button badge active={open}>
+                <svg
+                  className="w-4 h-4"
+                  viewBox="0 0 16 16"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  <Menu.Items className="absolute right-0 top-full mt-2 py-2 bg-white focus:outline-none shadow-lg origin-top-right">
-                    <Menu.Item as="div">sdf</Menu.Item>
-                    <Menu.Item as="div">sdf</Menu.Item>
-                  </Menu.Items>
-                </Transition>
-              </>
+                  <path
+                    className="text-gray-500 fill-current"
+                    d="M6.5 0C2.91 0 0 2.462 0 5.5c0 1.075.37 2.074 1 2.922V12l2.699-1.542A7.454 7.454 0 006.5 11c3.59 0 6.5-2.462 6.5-5.5S10.09 0 6.5 0z"
+                  />
+                  <path
+                    className="text-gray-400 fill-current"
+                    d="M16 9.5c0-.987-.429-1.897-1.147-2.639C14.124 10.348 10.66 13 6.5 13c-.103 0-.202-.018-.305-.021C7.231 13.617 8.556 14 10 14c.449 0 .886-.04 1.307-.11L15 16v-4h-.012C15.627 11.285 16 10.425 16 9.5z"
+                  />
+                </svg>
+              </Button>
             )}
-          </Menu>
+          >
+            {range(1, 5).map((index) => (
+              <NotificationItem
+                key={index}
+                to="#0"
+                highlight="Edit your information in a swipe"
+                description="Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim."
+                date="Feb 12, 2021"
+              />
+            ))}
+          </NotificationPopper>
         </div>
       </header>
 
