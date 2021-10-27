@@ -125,7 +125,7 @@ export function Dashboard() {
             <div className="flex gap-2">
               <button
                 type="button"
-                className="btn text-white bg-indigo-500 hover:bg-indigo-600"
+                className="btn flex gap-2 items-center text-white bg-indigo-500 hover:bg-indigo-600"
               >
                 <svg
                   className="flex-shrink-0 w-4 h-4 fill-current opacity-50"
@@ -133,7 +133,7 @@ export function Dashboard() {
                 >
                   <path d="M15 7H9V1c0-.6-.4-1-1-1S7 .4 7 1v6H1c-.6 0-1 .4-1 1s.4 1 1 1h6v6c0 .6.4 1 1 1s1-.4 1-1V9h6c.6 0 1-.4 1-1s-.4-1-1-1z" />
                 </svg>
-                <span className="xs:block hidden ml-2">Add view</span>
+                <span className="hidden sm:block">Add view</span>
               </button>
             </div>
           </div>
