@@ -6,6 +6,7 @@ import UserImage2 from '@/assets/user-36-02.jpg';
 import UserImage3 from '@/assets/user-36-03.jpg';
 import UserImage4 from '@/assets/user-36-04.jpg';
 
+import { DatePicker } from './DatePicker';
 import { FilterPopover } from './FilterPopover';
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
@@ -125,6 +126,7 @@ export function Dashboard() {
 
             <div className="flex gap-2">
               <FilterPopover />
+              <DatePicker />
 
               <button
                 type="button"

@@ -1,5 +1,6 @@
 @import './styles/theme.css';
 @import './styles/utility.scss';
+@import './styles/flatpickr.scss';
 
 @tailwind base;
 @tailwind components;
