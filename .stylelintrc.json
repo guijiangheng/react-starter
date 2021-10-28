@@ -14,7 +14,9 @@
           "apply",
           "variants",
           "responsive",
-          "screen"
+          "screen",
+          "import",
+          "layer"
         ]
       }
     ]
