@@ -31,7 +31,7 @@ export const Popover: React.FC<PopoverProps> = ({ reference, children }) => (
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 -translate-y-2"
           >
-            <HeadlessPopover.Panel className="absolute right-0 top-full mt-1 p-2 bg-white border border-gray-200 rounded shadow-lg">
+            <HeadlessPopover.Panel className="absolute right-0 top-full mt-1 bg-white border border-gray-200 rounded shadow-lg">
               {children}
             </HeadlessPopover.Panel>
           </Transition>

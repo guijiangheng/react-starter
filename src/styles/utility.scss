@@ -1,4 +1,4 @@
-@layer utilities {
+@layer components {
   .btn,
   .btn-sm,
   .btn-xs {
@@ -19,26 +19,14 @@
 
   .form-input,
   .form-textarea,
-  .form-multiselect,
   .form-select,
-  .form-checkbox,
-  .form-radio {
-    @apply text-gray-800 text-sm bg-white border focus:outline-none focus-visible:outline-none;
-  }
-
-  .form-input,
-  .form-textarea,
   .form-multiselect,
-  .form-select,
   .form-checkbox {
-    @apply rounded;
-  }
+    @apply border-gray-200 hover:border-gray-300 focus:border-indigo-300 rounded shadow-sm;
 
-  .form-input,
-  .form-textarea,
-  .form-multiselect,
-  .form-select {
-    @apply px-3 py-2 leading-5 border-gray-200 hover:border-gray-300 focus:border-indigo-300 shadow-sm;
+    &:focus {
+      @apply ring-0 ring-offset-0;
+    }
   }
 
   .form-input,
@@ -46,12 +34,8 @@
     @apply placeholder-gray-400;
   }
 
-  .form-select {
-    @apply pr-10;
-  }
-
   .form-checkbox,
   .form-radio {
-    @apply text-indigo-500 border border-gray-300;
+    @apply text-indigo-500;
   }
 }

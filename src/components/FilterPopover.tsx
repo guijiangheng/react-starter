@@ -14,10 +14,10 @@ export const FilterPopover: React.FC = () => (
       </button>
     }
   >
-    <div className="pb-2 pt-1.5 px-4 text-gray-400 text-xs font-semibold uppercase">
+    <div className="mb-2 pt-1.5 px-4 text-gray-400 text-xs font-semibold uppercase">
       Filters
     </div>
-    <ul className="min-w-56">
+    <ul className="mb-4 min-w-56">
       {[
         'Top Channels',
         'Direct VS Indirect',
@@ -34,5 +34,19 @@ export const FilterPopover: React.FC = () => (
         </li>
       ))}
     </ul>
+    <div className="flex items-center justify-between px-3 py-2 bg-gray-50 border-t border-gray-200">
+      <button
+        type="button"
+        className="btn-xs text-gray-500 hover:text-gray-600 bg-white border-gray-200 hover:border-gray-300"
+      >
+        Clear
+      </button>
+      <button
+        type="button"
+        className="btn-xs text-white bg-indigo-500 hover:bg-indigo-600"
+      >
+        Apply
+      </button>
+    </div>
   </Popover>
 );
