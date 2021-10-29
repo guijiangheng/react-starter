@@ -16,9 +16,8 @@
   --day-size: 36px;
   --days-width: calc(var(--day-size) * 7);
 
-  width: var(--days-width) + val(--calendar-padding) * 2;
   padding: var(--calendar-padding);
-  margin-left: -(var(--days-width) + var(--calendar-padding) * 2) / 2;
+  margin-left: calc((var(--calendar-padding) * 2 + var(--days-width)) / -2);
   border: inherit;
   @apply rounded shadow-lg border border-gray-200 left-1/2;
 }
