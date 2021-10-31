@@ -6,6 +6,7 @@ import UserImage2 from '@/assets/user-36-02.jpg';
 import UserImage3 from '@/assets/user-36-03.jpg';
 import UserImage4 from '@/assets/user-36-04.jpg';
 
+import { LineChart01 } from './charts/LineChart01';
 import { DatePicker } from './DatePicker';
 import { FilterPopover } from './FilterPopover';
 import { Header } from './Header';
@@ -141,6 +142,11 @@ export function Dashboard() {
                 <span className="hidden sm:block">Add view</span>
               </button>
             </div>
+          </div>
+
+          {/* Cards */}
+          <div className="grid gap-6 grid-cols-12">
+            <LineChart01 />
           </div>
         </main>
       </div>
