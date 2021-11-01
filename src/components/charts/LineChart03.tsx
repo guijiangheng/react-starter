@@ -1,5 +1,6 @@
 import { ChartData } from 'chart.js';
 import clsx from 'clsx';
+import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
 import Icon from '@/assets/icon-03.svg';
@@ -9,7 +10,7 @@ import { EditMenu } from '../EditMenu';
 import { LineChart } from '../LineChart';
 import { hexToRGB } from '../utils';
 
-export const LineChart03: React.FC = () => {
+export const LineChart03: React.FC = memo(() => {
   const data: ChartData<'line', number[], string> = {
     labels: [
       '12-01-2020',
@@ -138,4 +139,4 @@ export const LineChart03: React.FC = () => {
       </div>
     </div>
   );
-};
+});

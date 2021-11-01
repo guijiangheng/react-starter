@@ -22,7 +22,7 @@
   .form-select,
   .form-multiselect,
   .form-checkbox {
-    @apply border-gray-200 hover:border-gray-300 focus:border-indigo-300 rounded shadow-sm;
+    @apply text-sm border-gray-200 hover:border-gray-300 focus:border-indigo-300 rounded shadow-sm;
 
     &:focus {
       @apply ring-0 ring-offset-0;
