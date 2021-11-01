@@ -24,10 +24,11 @@ export const Popover: React.FC<PopoverProps> = ({ reference, children }) => (
           </HeadlessPopover.Button>
           <Transition
             show={open}
-            enter="transition transform duration-300 ease-out"
+            className="z-10"
+            enter="transition transform duration-200 ease-out"
             enterFrom="opacity-0 -translate-y-2"
             enterTo="opacity-100 translate-y-0"
-            leave="transition transform duration-200 ease-out"
+            leave="transition transform duration-150 ease-out"
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 -translate-y-2"
           >

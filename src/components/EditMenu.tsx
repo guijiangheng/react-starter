@@ -40,7 +40,7 @@ export const EditMenuRoot: React.FC = ({ children }) => (
       </button>
     )}
   >
-    <ul className="min-w-36">{children}</ul>
+    <ul className="py-1.5 min-w-36">{children}</ul>
   </Menu>
 );
 

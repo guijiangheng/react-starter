@@ -7,6 +7,7 @@ import UserImage3 from '@/assets/user-36-03.jpg';
 import UserImage4 from '@/assets/user-36-04.jpg';
 
 import { LineChart01 } from './charts/LineChart01';
+import { LineChart02 } from './charts/LineChart02';
 import { DatePicker } from './DatePicker';
 import { FilterPopover } from './FilterPopover';
 import { Header } from './Header';
@@ -147,6 +148,7 @@ export function Dashboard() {
           {/* Cards */}
           <div className="grid gap-6 grid-cols-12">
             <LineChart01 />
+            <LineChart02 />
           </div>
         </main>
       </div>
