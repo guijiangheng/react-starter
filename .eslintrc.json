@@ -21,6 +21,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
   "rules": {
+    "react/jsx-key": 2,
     "import/extensions": 0,
     "react/jsx-uses-react": 0,
     "react/react-in-jsx-scope": 0,
