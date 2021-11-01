@@ -133,7 +133,7 @@ export const LineChart01: React.FC = memo(() => {
         </div>
       </div>
       <div className="flex-grow">
-        <LineChart data={data} />
+        <LineChart data={data} width={400} height={128} />
       </div>
     </div>
   );

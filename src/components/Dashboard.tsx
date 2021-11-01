@@ -6,6 +6,7 @@ import UserImage2 from '@/assets/user-36-02.jpg';
 import UserImage3 from '@/assets/user-36-03.jpg';
 import UserImage4 from '@/assets/user-36-04.jpg';
 
+import { Chart04 } from './charts/Chart04';
 import { LineChart01 } from './charts/LineChart01';
 import { LineChart02 } from './charts/LineChart02';
 import { LineChart03 } from './charts/LineChart03';
@@ -151,6 +152,7 @@ export function Dashboard() {
             <LineChart01 />
             <LineChart02 />
             <LineChart03 />
+            <Chart04 />
           </div>
         </main>
       </div>

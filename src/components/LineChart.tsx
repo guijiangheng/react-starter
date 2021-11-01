@@ -28,10 +28,16 @@ Chart.register(
 );
 
 export interface LineChartProps {
+  width: number;
+  height: number;
   data: ChartData<'line', number[], string>;
 }
 
-export const LineChart: React.FC<LineChartProps> = ({ data }) => {
+export const LineChart: React.FC<LineChartProps> = ({
+  data,
+  width,
+  height,
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -83,5 +89,5 @@ export const LineChart: React.FC<LineChartProps> = ({ data }) => {
     };
   }, [data]);
 
-  return <canvas ref={canvasRef} width={400} height={300} />;
+  return <canvas ref={canvasRef} width={width} height={height} />;
 };
