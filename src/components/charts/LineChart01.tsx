@@ -1,7 +1,11 @@
 import { ChartData } from 'chart.js';
+import clsx from 'clsx';
+import { Link } from 'react-router-dom';
 
+import Icon from '@/assets/icon-01.svg';
 import { colors } from '@/theme';
 
+import { EditMenu } from '../EditMenu';
 import { LineChart } from '../LineChart';
 import { hexToRGB } from '../utils';
 
@@ -69,5 +73,67 @@ export const LineChart01: React.FC = () => {
     ],
   };
 
-  return <LineChart data={data} />;
+  return (
+    <div className="flex flex-col col-span-full bg-white border border-gray-200 rounded-sm shadow-lg sm:col-span-6 xl:col-span-4">
+      <div className="pt-5 px-5">
+        <header className="flex justify-between mb-2">
+          <img src={Icon} width="32" height="32" alt="Icon 01" />
+          <EditMenu>
+            <EditMenu.MenuItem>
+              {({ active }) => (
+                <Link
+                  to="#0"
+                  className={clsx(
+                    'flex px-3 py-1 text-gray-600 hover:text-gray-800 text-sm font-medium',
+                    active && 'text-gray-800',
+                  )}
+                >
+                  Option 1
+                </Link>
+              )}
+            </EditMenu.MenuItem>
+            <EditMenu.MenuItem>
+              {({ active }) => (
+                <Link
+                  to="#0"
+                  className={clsx(
+                    'flex px-3 py-1 text-gray-600 hover:text-gray-800 text-sm font-medium',
+                    active && 'text-gray-800',
+                  )}
+                >
+                  Option 2
+                </Link>
+              )}
+            </EditMenu.MenuItem>
+            <EditMenu.MenuItem>
+              {({ active }) => (
+                <Link
+                  to="#0"
+                  className={clsx(
+                    'flex px-3 py-1 text-red-500 hover:text-red-600 text-sm font-medium',
+                    active && 'text-red-600',
+                  )}
+                >
+                  Option 3
+                </Link>
+              )}
+            </EditMenu.MenuItem>
+          </EditMenu>
+        </header>
+        <h2 className="mb-2 text-gray-800 text-lg font-semibold">Acme Plus</h2>
+        <div className="mb-1 text-gray-400 text-xs font-semibold uppercase">
+          Sales
+        </div>
+        <div className="flex items-start">
+          <div className="mr-2 text-gray-800 text-3xl font-bold">$24,780</div>
+          <div className="px-1.5 text-white text-sm font-semibold bg-green-500 rounded-full">
+            +49%
+          </div>
+        </div>
+      </div>
+      <div className="flex-grow">
+        <LineChart data={data} />
+      </div>
+    </div>
+  );
 };
