@@ -2,14 +2,14 @@ import { ChartData } from 'chart.js';
 import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
-import Icon from '@/assets/icon-02.svg';
+import Icon from '@/assets/icon-03.svg';
 import { colors } from '@/theme';
 
 import { EditMenu } from '../EditMenu';
 import { LineChart } from '../LineChart';
 import { hexToRGB } from '../utils';
 
-export const LineChart02: React.FC = () => {
+export const LineChart03: React.FC = () => {
   const data: ChartData<'line', number[], string> = {
     labels: [
       '12-01-2020',
@@ -43,8 +43,8 @@ export const LineChart02: React.FC = () => {
       // Indigo line
       {
         data: [
-          732, 610, 610, 504, 504, 504, 349, 349, 504, 342, 504, 610, 391, 192,
-          154, 273, 191, 191, 126, 263, 349, 252, 423, 622, 470, 532,
+          540, 466, 540, 466, 385, 432, 334, 334, 289, 289, 200, 289, 222, 289,
+          289, 403, 554, 304, 289, 270, 134, 270, 829, 344, 388, 364,
         ],
         fill: true,
         backgroundColor: `rgba(${hexToRGB(colors.blue[500])}, 0.08)`,
@@ -59,8 +59,8 @@ export const LineChart02: React.FC = () => {
       // Gray line
       {
         data: [
-          532, 532, 532, 404, 404, 314, 314, 314, 314, 314, 234, 314, 234, 234,
-          314, 314, 314, 388, 314, 202, 202, 202, 202, 314, 720, 642,
+          689, 562, 477, 477, 477, 477, 458, 314, 430, 378, 430, 498, 642, 350,
+          145, 145, 354, 260, 188, 188, 300, 300, 282, 364, 660, 554,
         ],
         borderColor: colors.gray[300],
         borderWidth: 2,
@@ -121,13 +121,13 @@ export const LineChart02: React.FC = () => {
           </EditMenu>
         </header>
         <h2 className="mb-2 text-gray-800 text-lg font-semibold">
-          Acme Advanced
+          Acme Professional
         </h2>
         <div className="mb-1 text-gray-400 text-xs font-semibold uppercase">
           Sales
         </div>
         <div className="flex items-start">
-          <div className="mr-2 text-gray-800 text-3xl font-bold">$24,780</div>
+          <div className="mr-2 text-gray-800 text-3xl font-bold">$9,962</div>
           <div className="px-1.5 text-white text-sm font-semibold bg-green-500 rounded-full">
             +49%
           </div>
