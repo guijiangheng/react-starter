@@ -21,6 +21,7 @@
   },
   "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
   "rules": {
+    "react/jsx-key": 2,
     "import/extensions": 0,
     "react/jsx-uses-react": 0,
     "react/react-in-jsx-scope": 0,
@@ -31,6 +32,7 @@
     "import/prefer-default-export": 0,
     "react/require-default-props": 0,
     "react/no-array-index-key": 0,
-    "jsx-a11y/label-has-associated-control": 0
+    "jsx-a11y/label-has-associated-control": 0,
+    "react/jsx-props-no-spreading": [2, { "custom": "ignore" }]
   }
 }
