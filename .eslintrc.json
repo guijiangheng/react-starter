@@ -33,6 +33,12 @@
     "react/require-default-props": 0,
     "react/no-array-index-key": 0,
     "jsx-a11y/label-has-associated-control": 0,
-    "react/jsx-props-no-spreading": [2, { "custom": "ignore" }]
+    "react/jsx-props-no-spreading": 0,
+    "no-unused-vars": 0,
+    "react/display-name": 2,
+    "@typescript-eslint/no-unused-vars": [
+      2,
+      { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
+    ]
   }
 }
