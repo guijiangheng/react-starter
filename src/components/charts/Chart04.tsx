@@ -44,3 +44,5 @@ export const Chart04 = memo(() => {
     </div>
   );
 });
+
+Chart04.displayName = 'Chart04';

@@ -11,7 +11,7 @@ import {
   TimeScale,
   Tooltip,
 } from 'chart.js';
-import React, { useEffect, useRef } from 'react';
+import React, { CanvasHTMLAttributes, useEffect, useRef } from 'react';
 
 import { colors } from '@/theme';
 
@@ -27,17 +27,12 @@ Chart.register(
   Tooltip,
 );
 
-export interface LineChartProps {
-  width: number;
-  height: number;
+export interface LineChartProps
+  extends CanvasHTMLAttributes<HTMLCanvasElement> {
   data: ChartData<'line', number[], string>;
 }
 
-export const LineChart: React.FC<LineChartProps> = ({
-  data,
-  width,
-  height,
-}) => {
+export const LineChart: React.FC<LineChartProps> = ({ data, ...props }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -89,5 +84,5 @@ export const LineChart: React.FC<LineChartProps> = ({
     };
   }, [data]);
 
-  return <canvas ref={canvasRef} width={width} height={height} />;
+  return <canvas ref={canvasRef} {...props} />;
 };

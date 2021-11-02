@@ -412,6 +412,8 @@ export const Sidebar: React.FC<SidebarProps> = memo(
   },
 );
 
+Sidebar.displayName = 'Sidebar';
+
 Sidebar.propTypes = {
   visible: PropTypes.bool.isRequired,
   setVisible: PropTypes.func.isRequired,

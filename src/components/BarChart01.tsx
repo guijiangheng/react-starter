@@ -11,8 +11,9 @@ import {
   TimeScale,
   Tooltip,
 } from 'chart.js';
+import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { useEffect, useRef, useState } from 'react';
+import { CanvasHTMLAttributes, useEffect, useRef, useState } from 'react';
 
 import { formatValue, noop } from './utils';
 
@@ -25,17 +26,12 @@ Chart.register(
   Legend,
 );
 
-export interface BarChart01Props {
-  width: number;
-  height: number;
+export interface BarChart01Props
+  extends CanvasHTMLAttributes<HTMLCanvasElement> {
   data: ChartData<'bar', number[], string>;
 }
 
-export const BarChart01: React.FC<BarChart01Props> = ({
-  width,
-  height,
-  data,
-}) => {
+export const BarChart01: React.FC<BarChart01Props> = ({ data, ...props }) => {
   const [legends, setLegends] = useState<LegendItem[]>([]);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const chartRef = useRef<Chart<'bar', number[], string> | null>(null);
@@ -140,7 +136,10 @@ export const BarChart01: React.FC<BarChart01Props> = ({
               <button
                 onClick={() => onLegendClick(legend)}
                 type="button"
-                className="inline-flex gap-2 items-center"
+                className={clsx(
+                  'inline-flex gap-2 items-center',
+                  legend.hidden && 'opacity-30',
+                )}
               >
                 <span
                   className="block w-3 h-3 border-4 rounded-full"
@@ -159,15 +158,13 @@ export const BarChart01: React.FC<BarChart01Props> = ({
           ))}
         </ul>
       </div>
-      <div>
-        <canvas ref={canvasRef} width={width} height={height} />
+      <div className="flex-grow">
+        <canvas ref={canvasRef} {...props} />
       </div>
     </>
   );
 };
 
 BarChart01.propTypes = {
-  width: PropTypes.number.isRequired,
-  height: PropTypes.number.isRequired,
   data: PropTypes.object.isRequired as any,
 };

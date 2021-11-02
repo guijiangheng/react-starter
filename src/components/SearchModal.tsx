@@ -159,6 +159,8 @@ export const SearchModal: React.FC<SearchModalProps> = memo(
   ),
 );
 
+SearchModal.displayName = 'displayName';
+
 SearchModal.propTypes = {
   open: PropTypes.bool.isRequired,
   setOpen: PropTypes.func.isRequired,

@@ -36,6 +36,8 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ),
 );
 
+Button.displayName = 'Button';
+
 Button.propTypes = {
   active: PropTypes.bool,
   badge: PropTypes.bool,
@@ -210,6 +212,8 @@ export const Header: React.FC<HeaderProps> = memo(({ setSidebarOpen }) => {
     </>
   );
 });
+
+Header.displayName = 'Header';
 
 Header.propTypes = {
   setSidebarOpen: PropTypes.func.isRequired,

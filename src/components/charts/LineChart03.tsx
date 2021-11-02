@@ -140,3 +140,5 @@ export const LineChart03: React.FC = memo(() => {
     </div>
   );
 });
+
+LineChart03.displayName = 'LineChart03';

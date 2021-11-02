@@ -17,6 +17,8 @@ export const BackDrop: React.FC<Props> = memo(({ visible, className }) => (
   />
 ));
 
+BackDrop.displayName = 'BackDrop';
+
 BackDrop.propTypes = {
   visible: PropTypes.bool.isRequired,
   className: PropTypes.string,
