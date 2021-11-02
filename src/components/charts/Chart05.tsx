@@ -4,6 +4,7 @@ import { memo, useEffect, useMemo, useState } from 'react';
 import { colors } from '@/theme';
 
 import { RealtimeChart } from '../RealtimeChart';
+import { Tooltip } from '../Tooltip';
 import { hexToRGB } from '../utils';
 
 const data = [
@@ -63,17 +64,28 @@ export const Chart05: React.FC = memo(() => {
     <div className="flex flex-col col-span-full bg-white border border-gray-200 rounded-sm shadow-lg sm:col-span-6">
       <header className="flex gap-2 items-center px-5 py-4 border-b border-gray-100">
         <h2 className="text-gray-800 font-semibold">Real Time Value</h2>
-        <div className="text-center text-sm">
-          Built with{' '}
-          <a
-            className="underline"
-            href="https://www.chartjs.org/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Chart.js
-          </a>
-        </div>
+        <Tooltip
+          reference={
+            <svg
+              className="w-4 h-4 text-gray-400 fill-current"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 0C3.6 0 0 3.6 0 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8zm0 12c-.6 0-1-.4-1-1s.4-1 1-1 1 .4 1 1-.4 1-1 1zm1-3H7V4h2v5z" />
+            </svg>
+          }
+        >
+          <div className="p-3 text-center whitespace-nowrap text-sm">
+            Built with{' '}
+            <a
+              className="underline"
+              href="https://www.chartjs.org/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Chart.js
+            </a>
+          </div>
+        </Tooltip>
       </header>
       <RealtimeChart data={chartData} width={595} height={248} />
     </div>

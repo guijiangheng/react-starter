@@ -1,6 +1,12 @@
-import React, { useMemo, useState } from 'react';
+import React, {
+  cloneElement,
+  isValidElement,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
-interface TSlot {
+export interface HoverSlot {
   hover: boolean;
   listeners: {
     onMouseEnter: () => void;
@@ -11,11 +17,13 @@ interface TSlot {
 }
 
 export interface HoverProps {
-  children: (slot: TSlot) => React.ReactElement;
+  children: React.ReactNode | ((slot: HoverSlot) => React.ReactElement);
 }
 
 export const Hover: React.FC<HoverProps> = ({ children }) => {
   const [hover, setHover] = useState(false);
+
+  const isListenersBinded = useRef(false);
 
   const listeners = useMemo(
     () => ({
@@ -27,5 +35,27 @@ export const Hover: React.FC<HoverProps> = ({ children }) => {
     [],
   );
 
-  return children({ hover, listeners });
+  const resolvedChildren =
+    typeof children === 'function'
+      ? children({
+          hover,
+          get listeners() {
+            isListenersBinded.current = true;
+            return listeners;
+          },
+        })
+      : children;
+
+  if (!isListenersBinded.current) {
+    if (
+      !isValidElement(resolvedChildren) ||
+      (Array.isArray(resolvedChildren) && resolvedChildren.length > 1)
+    ) {
+      throw new Error("Hover's listeners is not binded!");
+    }
+
+    return cloneElement(resolvedChildren, { ...listeners });
+  }
+
+  return resolvedChildren;
 };
