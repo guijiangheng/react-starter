@@ -21,24 +21,25 @@
   },
   "plugins": ["react", "@typescript-eslint", "simple-import-sort"],
   "rules": {
-    "react/jsx-key": 2,
+    "no-unused-vars": 0,
     "import/extensions": 0,
-    "react/jsx-uses-react": 0,
-    "react/react-in-jsx-scope": 0,
+    "import/prefer-default-export": 0,
     "simple-import-sort/imports": 2,
     "simple-import-sort/exports": 2,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "jsx-a11y/no-static-element-interactions": 0,
-    "import/prefer-default-export": 0,
-    "react/require-default-props": 0,
-    "react/no-array-index-key": 0,
-    "jsx-a11y/label-has-associated-control": 0,
-    "react/jsx-props-no-spreading": 0,
-    "no-unused-vars": 0,
-    "react/display-name": 2,
     "@typescript-eslint/no-unused-vars": [
       2,
       { "varsIgnorePattern": "^_", "argsIgnorePattern": "^_" }
-    ]
+    ],
+    "jsx-a11y/click-events-have-key-events": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "jsx-a11y/label-has-associated-control": 0,
+    "react/jsx-uses-react": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/no-array-index-key": 0,
+    "react/require-default-props": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/jsx-key": 2,
+    "react/display-name": 2,
+    "react/prop-types": [2, { "skipUndeclared": true }]
   }
 }
