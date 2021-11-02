@@ -8,6 +8,7 @@ import UserImage4 from '@/assets/user-36-04.jpg';
 
 import { Chart04 } from './charts/Chart04';
 import { Chart05 } from './charts/Chart05';
+import { Chart06 } from './charts/Chart06';
 import { LineChart01 } from './charts/LineChart01';
 import { LineChart02 } from './charts/LineChart02';
 import { LineChart03 } from './charts/LineChart03';
@@ -155,6 +156,7 @@ export function Dashboard() {
             <LineChart03 />
             <Chart04 />
             <Chart05 />
+            <Chart06 />
           </div>
         </main>
       </div>
