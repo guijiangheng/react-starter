@@ -23,7 +23,7 @@ export interface HoverProps {
 export const Hover: React.FC<HoverProps> = ({ children }) => {
   const [hover, setHover] = useState(false);
 
-  const isListenersBinded = useRef(false);
+  const isListenerBinded = useRef(false);
 
   const listeners = useMemo(
     () => ({
@@ -40,13 +40,13 @@ export const Hover: React.FC<HoverProps> = ({ children }) => {
       ? children({
           hover,
           get listeners() {
-            isListenersBinded.current = true;
+            isListenerBinded.current = true;
             return listeners;
           },
         })
       : children;
 
-  if (!isListenersBinded.current) {
+  if (!isListenerBinded.current) {
     if (
       !isValidElement(resolvedChildren) ||
       (Array.isArray(resolvedChildren) && resolvedChildren.length > 1)

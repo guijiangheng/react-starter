@@ -12,6 +12,7 @@ import { Chart06 } from './charts/Chart06';
 import { LineChart01 } from './charts/LineChart01';
 import { LineChart02 } from './charts/LineChart02';
 import { LineChart03 } from './charts/LineChart03';
+import { Table01 } from './charts/Table01';
 import { DatePicker } from './DatePicker';
 import { FilterPopover } from './FilterPopover';
 import { Header } from './Header';
@@ -157,6 +158,7 @@ export function Dashboard() {
             <Chart04 />
             <Chart05 />
             <Chart06 />
+            <Table01 />
           </div>
         </main>
       </div>
