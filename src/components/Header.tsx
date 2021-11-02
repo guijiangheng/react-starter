@@ -52,11 +52,11 @@ interface HelpLinkProps {
 const HelpLink: React.FC<HelpLinkProps> = ({ to, children }) => (
   <HeadlessMenu.Item>
     {({ active }) => (
-      <HeadlessMenu.Button as="li">
+      <li>
         <Link to={to} active={active} className="px-3 py-1">
           {children}
         </Link>
-      </HeadlessMenu.Button>
+      </li>
     )}
   </HeadlessMenu.Item>
 );

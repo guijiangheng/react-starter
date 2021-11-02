@@ -15,9 +15,9 @@ interface MenuItemProps {
 const MenuItem: React.FC<MenuItemProps> = ({ children }) => (
   <HeadlessMenu.Item>
     {({ active }) => (
-      <HeadlessMenu.Button as="li">
+      <li>
         {typeof children === 'function' ? children({ active }) : children}
-      </HeadlessMenu.Button>
+      </li>
     )}
   </HeadlessMenu.Item>
 );

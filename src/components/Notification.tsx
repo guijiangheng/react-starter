@@ -18,7 +18,7 @@ export const Notification: React.FC<NotificationProps> = ({
 }) => (
   <Menu.Item>
     {({ active }) => (
-      <Menu.Button as="li" className="last:border-0 border-b border-gray-200">
+      <li className="last:border-0 border-b border-gray-200">
         <Link
           className={clsx(
             'block px-4 py-2 hover:bg-gray-100',
@@ -35,7 +35,7 @@ export const Notification: React.FC<NotificationProps> = ({
             {date}
           </span>
         </Link>
-      </Menu.Button>
+      </li>
     )}
   </Menu.Item>
 );
