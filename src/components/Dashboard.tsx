@@ -16,6 +16,7 @@ import { Card07 } from './charts/Card07';
 import { Card08 } from './charts/Card08';
 import { Card09 } from './charts/Card09';
 import { Card10 } from './charts/Card10';
+import { Card11 } from './charts/Card11';
 import { DatePicker } from './DatePicker';
 import { FilterPopover } from './FilterPopover';
 import { Header } from './Header';
@@ -165,6 +166,7 @@ export function Dashboard() {
             <Card08 />
             <Card09 />
             <Card10 />
+            <Card11 />
           </div>
         </main>
       </div>

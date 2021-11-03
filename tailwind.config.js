@@ -1,3 +1,5 @@
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   mode: 'jit',
   purge: [],
@@ -5,6 +7,11 @@ module.exports = {
   purge: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        gray: colors.blueGray,
+        'light-blue': colors.lightBlue,
+        red: colors.rose,
+      },
       minWidth: {
         36: '9rem',
         44: '11rem',
