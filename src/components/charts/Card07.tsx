@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-export const Table01: React.FC = memo(() => (
+export const Card07: React.FC = memo(() => (
   <div className="col-span-full bg-white border border-gray-200 rounded-sm shadow-lg xl:col-span-8">
     <header className="px-5 py-4 border-b border-gray-100">
       <h2 className="text-gray-800 font-semibold">Top Channels</h2>
@@ -201,4 +201,4 @@ export const Table01: React.FC = memo(() => (
   </div>
 ));
 
-Table01.displayName = 'Table01';
+Card07.displayName = 'Card07';

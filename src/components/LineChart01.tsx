@@ -27,12 +27,12 @@ Chart.register(
   Tooltip,
 );
 
-export interface LineChartProps
+export interface LineChart01Props
   extends CanvasHTMLAttributes<HTMLCanvasElement> {
   data: ChartData<'line', number[], string>;
 }
 
-export const LineChart: React.FC<LineChartProps> = ({ data, ...props }) => {
+export const LineChart01: React.FC<LineChart01Props> = ({ data, ...props }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {

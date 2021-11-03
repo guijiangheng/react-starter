@@ -6,13 +6,13 @@ import UserImage2 from '@/assets/user-36-02.jpg';
 import UserImage3 from '@/assets/user-36-03.jpg';
 import UserImage4 from '@/assets/user-36-04.jpg';
 
-import { Chart04 } from './charts/Chart04';
-import { Chart05 } from './charts/Chart05';
-import { Chart06 } from './charts/Chart06';
-import { LineChart01 } from './charts/LineChart01';
-import { LineChart02 } from './charts/LineChart02';
-import { LineChart03 } from './charts/LineChart03';
-import { Table01 } from './charts/Table01';
+import { Card01 } from './charts/Card01';
+import { Card02 } from './charts/Card02';
+import { Card03 } from './charts/Card03';
+import { Card04 } from './charts/Card04';
+import { Card05 } from './charts/Card05';
+import { Card06 } from './charts/Card06';
+import { Card07 } from './charts/Card07';
 import { DatePicker } from './DatePicker';
 import { FilterPopover } from './FilterPopover';
 import { Header } from './Header';
@@ -152,13 +152,13 @@ export function Dashboard() {
 
           {/* Cards */}
           <div className="grid gap-6 grid-cols-12">
-            <LineChart01 />
-            <LineChart02 />
-            <LineChart03 />
-            <Chart04 />
-            <Chart05 />
-            <Chart06 />
-            <Table01 />
+            <Card01 />
+            <Card02 />
+            <Card03 />
+            <Card04 />
+            <Card05 />
+            <Card06 />
+            <Card07 />
           </div>
         </main>
       </div>

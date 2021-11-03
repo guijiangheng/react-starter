@@ -4,7 +4,7 @@ import { colors } from '@/theme';
 
 import { DoughnutChart } from '../DoughnutChart';
 
-export const Chart06: React.FC = memo(() => {
+export const Card06: React.FC = memo(() => {
   const chartData = {
     labels: ['United States', 'Italy', 'Other'],
     datasets: [
@@ -36,4 +36,4 @@ export const Chart06: React.FC = memo(() => {
   );
 });
 
-Chart06.displayName = 'Chart06';
+Card06.displayName = 'Card06';

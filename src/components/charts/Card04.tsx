@@ -4,7 +4,7 @@ import { colors } from '@/theme';
 
 import { BarChart01 } from '../BarChart01';
 
-export const Chart04 = memo(() => {
+export const Card04 = memo(() => {
   const data = {
     labels: [
       '12-01-2020',
@@ -35,6 +35,7 @@ export const Chart04 = memo(() => {
       },
     ],
   };
+
   return (
     <div className="flex flex-col col-span-full bg-white border border-gray-200 rounded-sm shadow-lg sm:col-span-6">
       <header className="px-5 py-4 border-b border-gray-100">
@@ -45,4 +46,4 @@ export const Chart04 = memo(() => {
   );
 });
 
-Chart04.displayName = 'Chart04';
+Card04.displayName = 'Card04';

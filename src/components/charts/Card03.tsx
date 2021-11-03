@@ -7,10 +7,10 @@ import Icon from '@/assets/icon-03.svg';
 import { colors } from '@/theme';
 
 import { EditMenu } from '../EditMenu';
-import { LineChart } from '../LineChart';
+import { LineChart01 } from '../LineChart01';
 import { hexToRGB } from '../utils';
 
-export const LineChart03: React.FC = memo(() => {
+export const Card03: React.FC = memo(() => {
   const data: ChartData<'line', number[], string> = {
     labels: [
       '12-01-2020',
@@ -135,10 +135,10 @@ export const LineChart03: React.FC = memo(() => {
         </div>
       </div>
       <div className="flex-grow">
-        <LineChart data={data} width={400} height={128} />
+        <LineChart01 data={data} width={400} height={128} />
       </div>
     </div>
   );
 });
 
-LineChart03.displayName = 'LineChart03';
+Card03.displayName = 'Card03';

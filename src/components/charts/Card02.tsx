@@ -3,14 +3,14 @@ import clsx from 'clsx';
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
 
-import Icon from '@/assets/icon-01.svg';
+import Icon from '@/assets/icon-02.svg';
 import { colors } from '@/theme';
 
 import { EditMenu } from '../EditMenu';
-import { LineChart } from '../LineChart';
+import { LineChart01 } from '../LineChart01';
 import { hexToRGB } from '../utils';
 
-export const LineChart01: React.FC = memo(() => {
+export const Card02: React.FC = memo(() => {
   const data: ChartData<'line', number[], string> = {
     labels: [
       '12-01-2020',
@@ -44,8 +44,8 @@ export const LineChart01: React.FC = memo(() => {
       // Indigo line
       {
         data: [
-          622, 622, 426, 471, 365, 365, 238, 324, 288, 206, 324, 324, 500, 409,
-          409, 273, 232, 273, 500, 570, 767, 808, 685, 767, 685, 685,
+          732, 610, 610, 504, 504, 504, 349, 349, 504, 342, 504, 610, 391, 192,
+          154, 273, 191, 191, 126, 263, 349, 252, 423, 622, 470, 532,
         ],
         fill: true,
         backgroundColor: `rgba(${hexToRGB(colors.blue[500])}, 0.08)`,
@@ -121,22 +121,24 @@ export const LineChart01: React.FC = memo(() => {
             </EditMenu.MenuItem>
           </EditMenu>
         </header>
-        <h2 className="mb-2 text-gray-800 text-lg font-semibold">Acme Plus</h2>
+        <h2 className="mb-2 text-gray-800 text-lg font-semibold">
+          Acme Advanced
+        </h2>
         <div className="mb-1 text-gray-400 text-xs font-semibold uppercase">
           Sales
         </div>
         <div className="flex items-start">
-          <div className="mr-2 text-gray-800 text-3xl font-bold">$17,489</div>
-          <div className="px-1.5 text-white text-sm font-semibold bg-yellow-500 rounded-full">
-            -14%
+          <div className="mr-2 text-gray-800 text-3xl font-bold">$24,780</div>
+          <div className="px-1.5 text-white text-sm font-semibold bg-green-500 rounded-full">
+            +49%
           </div>
         </div>
       </div>
       <div className="flex-grow">
-        <LineChart data={data} width={400} height={128} />
+        <LineChart01 data={data} width={400} height={128} />
       </div>
     </div>
   );
 });
 
-LineChart01.displayName = 'LineChart01';
+Card02.displayName = 'Card02';

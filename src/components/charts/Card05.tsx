@@ -16,7 +16,7 @@ const data = [
   55.82, 53.94, 52.65, 50.25,
 ];
 
-export const Chart05: React.FC = memo(() => {
+export const Card05: React.FC = memo(() => {
   const [tick, setTick] = useState(0);
   const [dataRange, setDataRange] = useState([0, 35]);
   const [dates, setDates] = useState(() => {
@@ -92,4 +92,4 @@ export const Chart05: React.FC = memo(() => {
   );
 });
 
-Chart05.displayName = 'Chart05';
+Card05.displayName = 'Card05';
