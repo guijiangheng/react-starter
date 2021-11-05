@@ -18,6 +18,7 @@ import { Card09 } from './charts/Card09';
 import { Card10 } from './charts/Card10';
 import { Card11 } from './charts/Card11';
 import { Card12 } from './charts/Card12';
+import { Card13 } from './charts/Card13';
 import { DatePicker } from './DatePicker';
 import { FilterPopover } from './FilterPopover';
 import { Header } from './Header';
@@ -169,6 +170,7 @@ export function Dashboard() {
             <Card10 />
             <Card11 />
             <Card12 />
+            <Card13 />
           </div>
         </main>
       </div>

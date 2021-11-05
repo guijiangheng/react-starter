@@ -1,21 +1,23 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { memo } from 'react';
+import { HTMLAttributes, memo } from 'react';
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   visible: boolean;
-  className?: string;
 }
 
-export const BackDrop: React.FC<Props> = memo(({ visible, className }) => (
-  <div
-    className={clsx(
-      'fixed inset-0 bg-gray-900 bg-opacity-30 transition-opacity duration-200',
-      visible ? 'opacity-100' : 'opacity-0 pointer-events-none',
-      className,
-    )}
-  />
-));
+export const BackDrop: React.FC<Props> = memo(
+  ({ visible, className, ...props }) => (
+    <div
+      className={clsx(
+        'fixed inset-0 bg-gray-900 bg-opacity-30 transition-opacity duration-200',
+        visible ? 'opacity-100' : 'opacity-0 pointer-events-none',
+        className,
+      )}
+      {...props}
+    />
+  ),
+);
 
 BackDrop.displayName = 'BackDrop';
 

@@ -1,10 +1,11 @@
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { memo } from 'react';
+import { memo, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import { BackDrop } from './BackDrop';
 import { Badge } from './Badge';
+import { noop } from './utils';
 
 interface LinkItemProps {
   active?: boolean;
@@ -56,12 +57,32 @@ export const Sidebar: React.FC<SidebarProps> = memo(
   ({ visible, setVisible }) => {
     const { pathname } = useLocation();
 
+    useEffect(() => {
+      if (!visible) return noop;
+
+      const onKeyDown = ({ keyCode }: KeyboardEvent) => {
+        if (keyCode === 27) {
+          setVisible(false);
+        }
+      };
+
+      document.addEventListener('keydown', onKeyDown);
+
+      return () => {
+        document.removeEventListener('keydown', onKeyDown);
+      };
+    }, [setVisible, visible]);
+
     return (
-      <>
-        <BackDrop visible={visible} className="z-40 lg:hidden" />
+      <div className="lg:w-64">
+        <BackDrop
+          visible={visible}
+          className="z-40 lg:hidden"
+          onClick={() => setVisible(false)}
+        />
         <div
           className={clsx(
-            'absolute z-40 left-0 top-0 p-4 w-64 h-screen bg-gray-800 transition-transform duration-200 ease-in-out',
+            'absolute z-40 left-0 top-0 p-4 w-64 h-screen bg-gray-800 transition-transform duration-200 ease-in-out lg:static lg:translate-x-0',
             visible ? 'translate-x-0' : '-translate-x-64',
           )}
         >
@@ -407,7 +428,7 @@ export const Sidebar: React.FC<SidebarProps> = memo(
             </ul>
           </div>
         </div>
-      </>
+      </div>
     );
   },
 );
