@@ -1,3 +1,11 @@
+import flip from '@popperjs/core/lib/modifiers/flip';
+import offset from '@popperjs/core/lib/modifiers/offset';
+import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow';
+import {
+  defaultModifiers,
+  popperGenerator,
+} from '@popperjs/core/lib/popper-lite';
+
 export const noop = () => {};
 
 export const formatValue = (value: number) =>
@@ -27,3 +35,7 @@ export const hexToRGB = (h: string) => {
 export const REM = parseFloat(
   getComputedStyle(document.documentElement).fontSize,
 );
+
+export const createPopper = popperGenerator({
+  defaultModifiers: [...defaultModifiers, flip, offset, preventOverflow],
+});

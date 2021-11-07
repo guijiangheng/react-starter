@@ -1,20 +1,9 @@
 import { Popover as HeadlessPopover, Transition } from '@headlessui/react';
-import flip from '@popperjs/core/lib/modifiers/flip';
-import offset from '@popperjs/core/lib/modifiers/offset';
-import preventOverflow from '@popperjs/core/lib/modifiers/preventOverflow';
-import {
-  defaultModifiers,
-  Instance,
-  popperGenerator,
-} from '@popperjs/core/lib/popper-lite';
+import { Instance } from '@popperjs/core';
 import PropTypes from 'prop-types';
 import { Fragment, useEffect, useRef } from 'react';
 
-import { noop, REM } from './utils';
-
-const createPopper = popperGenerator({
-  defaultModifiers: [...defaultModifiers, flip, offset, preventOverflow],
-});
+import { createPopper, noop, REM } from './utils';
 
 interface PopoverSlot {
   open: boolean;
@@ -27,14 +16,15 @@ interface PopoverProps {
 
 export const Popover: React.FC<PopoverProps> = ({ reference, children }) => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const tooltipRef = useRef<HTMLDivElement>(null);
+  const popperRef = useRef<HTMLDivElement>(null);
   const popperInstanceRef = useRef<Instance | null>(null);
 
   useEffect(() => {
-    if (!containerRef.current || !tooltipRef.current) return noop;
+    if (!containerRef.current || !popperRef.current) return noop;
+
     popperInstanceRef.current = createPopper(
       containerRef.current,
-      tooltipRef.current,
+      popperRef.current,
       {
         placement: 'bottom-end',
         modifiers: [
@@ -82,7 +72,7 @@ export const Popover: React.FC<PopoverProps> = ({ reference, children }) => {
             <HeadlessPopover.Button as="div" className="inline-flex">
               {resolvedReference}
             </HeadlessPopover.Button>
-            <div ref={tooltipRef} className="z-10">
+            <div ref={popperRef} className="z-10 inline-flex">
               <Transition
                 as={Fragment}
                 show={open}
