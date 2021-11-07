@@ -112,11 +112,15 @@ export function Dashboard() {
           </div>
 
           {/* Dashboard actions */}
-          <div className="flex items-center justify-between mb-8">
-            <div className="flex -space-x-3">
+          <div className="mb-8 sm:flex sm:items-center sm:justify-between">
+            <div className="flex justify-center mb-8 -space-x-3 sm:mb-0">
               {[UserImage1, UserImage2, UserImage3, UserImage4].map(
                 (image, index) => (
-                  <Link key={index} className="inline-flex" to="#0">
+                  <Link
+                    key={index}
+                    className="inline-flex flex-shrink-0"
+                    to="#0"
+                  >
                     <img
                       className="rounded-full"
                       src={image}
