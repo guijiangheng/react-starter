@@ -1,5 +1,7 @@
 {
+  "plugins": ["stylelint-scss"],
   "extends": [
+    "stylelint-config-standard-scss",
     "stylelint-config-standard",
     "stylelint-config-recess-order",
     "stylelint-config-prettier"
@@ -19,6 +21,21 @@
           "layer"
         ]
       }
-    ]
+    ],
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+          "import",
+          "layer"
+        ]
+      }
+    ],
+    "scss/at-import-partial-extension": null
   }
 }

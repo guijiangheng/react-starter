@@ -18,6 +18,16 @@
   }
 
   .form-input,
+  .form-textarea {
+    @apply placeholder-gray-400;
+  }
+
+  .form-checkbox,
+  .form-radio {
+    @apply text-indigo-500;
+  }
+
+  .form-input,
   .form-textarea,
   .form-select,
   .form-multiselect,
@@ -27,15 +37,5 @@
     &:focus {
       @apply ring-0 ring-offset-0;
     }
-  }
-
-  .form-input,
-  .form-textarea {
-    @apply placeholder-gray-400;
-  }
-
-  .form-checkbox,
-  .form-radio {
-    @apply text-indigo-500;
   }
 }

@@ -7,11 +7,12 @@
     "build": "npm run eject-theme && tsc && vite build",
     "serve": "vite preview",
     "prepare": "husky install",
-    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "lint:css": "stylelint \"src/**/*.{css,scss}\""
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
-    "src/**/*.css": "stylelint --cache --fix"
+    "src/**/*.{css,scss}": "stylelint --cache --fix"
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
@@ -60,6 +61,8 @@
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-recess-order": "^2.5.0",
     "stylelint-config-standard": "^23.0.0",
+    "stylelint-config-standard-scss": "^2.0.0",
+    "stylelint-scss": "^4.0.0",
     "tailwindcss": "^2.2.19",
     "typescript": "^4.3.2",
     "vite": "^2.6.4"
