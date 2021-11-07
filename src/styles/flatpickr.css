@@ -1,12 +1,15 @@
+/* stylelint-disable selector-class-pattern */
+
 @import 'flatpickr/dist/flatpickr.min.css';
 
-@keyframes fpFadeInDown {
+@keyframes fp-fade-in-down {
   from {
-    opacity: 0;
+    opacity: 0%;
     transform: translate3d(0, -8px, 0);
   }
+
   to {
-    opacity: 1;
+    opacity: 100%;
     transform: translate3d(0, 0, 0);
   }
 }
@@ -19,7 +22,7 @@
   padding: var(--calendar-padding);
   margin-left: calc((var(--calendar-padding) * 2 + var(--days-width)) / -2);
   border: inherit;
-  @apply rounded shadow-lg border border-gray-200 left-1/2;
+  @apply left-1/2 border border-gray-200 rounded shadow-lg;
 }
 
 @screen lg {
@@ -31,7 +34,7 @@
 }
 
 .flatpickr-calendar.animate.open {
-  animation: fpFadeInDown 200ms ease-out;
+  animation: fp-fade-in-down 200ms ease-out;
 }
 
 .flatpickr-calendar.static {
@@ -54,7 +57,7 @@
 }
 
 .flatpickr-day {
-  @apply bg-gray-50 text-sm font-medium text-gray-600;
+  @apply text-gray-600 text-sm font-medium bg-gray-50;
 
   max-width: var(--day-size);
   height: var(--day-size);
@@ -114,7 +117,7 @@
 .flatpickr-day.selected.nextMonthDay,
 .flatpickr-day.startRange.nextMonthDay,
 .flatpickr-day.endRange.nextMonthDay {
-  @apply bg-indigo-500 text-indigo-50;
+  @apply text-indigo-50 bg-indigo-500;
 }
 
 .flatpickr-day.inRange,
@@ -131,7 +134,7 @@
 .flatpickr-day.nextMonthDay:focus,
 .flatpickr-day.today:hover,
 .flatpickr-day.today:focus {
-  @apply bg-indigo-400 text-indigo-50;
+  @apply text-indigo-50 bg-indigo-400;
 }
 
 .flatpickr-day.inRange,
@@ -160,20 +163,20 @@
   height: 11px;
 }
 
-.flatpickr-months .flatpickr-prev-month:hover,
-.flatpickr-months .flatpickr-next-month:hover,
-.flatpickr-months .flatpickr-prev-month:hover svg,
-.flatpickr-months .flatpickr-next-month:hover svg {
-  fill: inherit;
-  @apply text-gray-400;
-}
-
 .flatpickr-months .flatpickr-prev-month {
   margin-left: -10px;
 }
 
 .flatpickr-months .flatpickr-next-month {
   margin-right: -10px;
+}
+
+.flatpickr-months .flatpickr-prev-month:hover,
+.flatpickr-months .flatpickr-next-month:hover,
+.flatpickr-months .flatpickr-prev-month:hover svg,
+.flatpickr-months .flatpickr-next-month:hover svg {
+  fill: inherit;
+  @apply text-gray-400;
 }
 
 .flatpickr-months .flatpickr-month {
@@ -194,7 +197,7 @@
 }
 
 .flatpickr-current-month span.cur-month {
-  @apply font-medium m-0;
+  @apply m-0 font-medium;
 }
 
 .flatpickr-current-month span.cur-month:hover {
@@ -215,7 +218,7 @@
 }
 
 span.flatpickr-weekday {
-  @apply text-gray-400 font-medium text-xs;
+  @apply text-gray-400 text-xs font-medium;
 }
 
 .flatpickr-calendar.arrowTop::before,

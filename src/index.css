@@ -2,7 +2,7 @@
 
 @import './styles/theme.css';
 @import './styles/utility.scss';
-@import './styles/flatpickr.scss';
+@import './styles/flatpickr.css';
 
 @tailwind base;
 @tailwind components;
