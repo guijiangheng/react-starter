@@ -23,3 +23,7 @@ export const hexToRGB = (h: string) => {
   }
   return `${r},${g},${b}`;
 };
+
+export const REM = parseFloat(
+  getComputedStyle(document.documentElement).fontSize,
+);

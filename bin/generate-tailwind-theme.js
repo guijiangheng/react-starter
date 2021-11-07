@@ -19,6 +19,7 @@ if (
   const themeStr = JSON.stringify(theme.colors);
   const ts = `
     export const colors = ${themeStr};
+    export const theme = ${JSON.stringify(resolveConfig(tailwindConfig))};
   `;
 
   try {

@@ -3,7 +3,7 @@ import 'chartjs-adapter-moment';
 import { Chart, ChartData } from 'chart.js';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { takeLast } from 'rambda';
+import { takeLast } from 'ramda';
 import { CanvasHTMLAttributes, useEffect, useMemo, useRef } from 'react';
 
 import { formatValue, noop } from './utils';

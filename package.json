@@ -15,12 +15,13 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.1",
+    "@popperjs/core": "^2.10.2",
     "chart.js": "^3.6.0",
     "chartjs-adapter-moment": "^1.0.0",
     "clsx": "^1.1.1",
     "moment": "^2.29.1",
     "prop-types": "^15.7.2",
-    "rambda": "^6.9.0",
+    "ramda": "^0.27.1",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",
     "react-flatpickr": "^3.10.7",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.3.4",
     "@types/node": "^16.10.3",
+    "@types/ramda": "^0.27.46",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-flatpickr": "^3.8.4",

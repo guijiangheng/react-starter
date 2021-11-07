@@ -1,4 +1,4 @@
-import { range, slice } from 'rambda';
+import { range, slice } from 'ramda';
 import { memo, useEffect, useMemo, useState } from 'react';
 
 import { colors } from '@/theme';

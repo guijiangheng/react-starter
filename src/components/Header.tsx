@@ -1,7 +1,7 @@
 import { Menu as HeadlessMenu } from '@headlessui/react';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';
-import { range } from 'rambda';
+import { range } from 'ramda';
 import React, { forwardRef, memo, useState } from 'react';
 
 import { Link } from './Link';
